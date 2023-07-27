@@ -63,10 +63,10 @@ jobs:
     name: Build Aseprite
     needs: check-version
     if: ${{ needs.check-version.outputs.should_build }}
-    runs-on: ${{ matrix.os,macOS-latest }}
+    runs-on: ${{ matrix.os }}
     strategy:
        matrix:
-         os: [windows-latest]
+         os: [windows-latest, macOS-latest]
        fail-fast: false
     steps:
       - name: (Windows) Install dependencies
